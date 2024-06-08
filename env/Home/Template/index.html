@@ -1,0 +1,46 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Converter</title>
+    <link rel="stylesheet" href="/static/css/practice.css">
+</head>
+
+<body>
+    <h1>ALWAYS AHEAD </h1>
+    <div class="container">
+        <h1 id="h1">Image to Text Converter</h1>
+        <form method="post" enctype="multipart/form-data" action="predictImage">
+            {% csrf_token %}
+            <div class="upload-section">
+                <label for="imageInput" id="imageLabel">Upload Image <input name="filePath" type="file" accept="image/*"style="height: 9px;width: 10px;"></label>
+            </div> 
+    </div>
+    <div class="image-preview" id="imagePreview">
+        <img src="#" alt="Uploaded Image" id="uploadedImage">
+    </div>
+    <div class="button-section">
+        <button class="button" id="convertButton">Convert to Speech </button>
+        <img src={{filePathName}} style="height:460px;width:400px;">
+    </div>
+    <div id="output" class="output-section"> <h2><img src={{filePathName}} style="height:400px;width: 400px;"></h2><h1>{{predictedLabel}}</h1></div>
+    <button class="button" id="clearButton">Clear</button>
+    </div>
+
+    <script src="/static/js/hii.js"></script>
+</body>
+
+</html>
+
+
+{% endblock %}
+
+
+
